@@ -17,4 +17,9 @@ RUN apt-get install -y wget; \
 	apt-get install -y build-essential fontconfig libfontconfig libjpeg62-turbo libpng16-16 libxrender1 xfonts-75dpi xorg xvfb; \
 	dpkg -i /usr/local/bin/wkhtmltox_0.12.5-1.buster_amd64.deb && rm /usr/local/bin/wkhtmltox_0.12.5-1.buster_amd64.deb
 	
-RUN echo "new image"
+ENV COMPOSER_HOME=/tmp/composer
+RUN mkdir -p $COMPOSER_HOME
+COPY composer.json $COMPOSER_HOME
+COPY composer.lock $COMPOSER_HOME
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.16 && cd $COMPOSER_HOME && composer install
+RUN ls -lhrt $COMPOSER_HOME
