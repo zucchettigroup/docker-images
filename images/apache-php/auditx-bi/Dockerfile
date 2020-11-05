@@ -17,3 +17,6 @@ RUN apt-get install -y wget; \
 	apt-get install -y build-essential fontconfig libfontconfig libjpeg62-turbo libpng16-16 libxrender1 xfonts-75dpi xorg xvfb; \
 	dpkg -i /usr/local/bin/wkhtmltox_0.12.5-1.buster_amd64.deb && rm /usr/local/bin/wkhtmltox_0.12.5-1.buster_amd64.deb
 	
+	
+COPY composer.json /tmp
+COPY composer.lock /tmp
