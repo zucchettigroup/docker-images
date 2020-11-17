@@ -33,7 +33,7 @@ LOG_FILE = '/dev/stdout'
 # Server settings
 ##########################################################################
 
-SERVER_MODE = os.getenv('PGADMIN_SETUP_SERVER_MODE', "False")
+SERVER_MODE = bool(os.getenv('PGADMIN_SETUP_SERVER_MODE', "False"))
 
 DEFAULT_SERVER = '0.0.0.0'
 DEFAULT_SERVER_PORT = int(os.getenv('PG_ADMIN_PORT', 5050))
