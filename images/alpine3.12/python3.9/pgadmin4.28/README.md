@@ -11,5 +11,7 @@ Viene utilizzato un utente senza privilegi e la porta di default in ascolto è l
 Passare le seguienti variabili d'ambiente:
 
 PGADMIN_SETUP_SERVER_MODE = True
-PGADMIN_SETUP_EMAIL = mail/utente di autenticazione
-PGADMIN_SETUP_PASSWORD = password di autenticazione
+
+PGADMIN_SETUP_EMAIL = mail di autenticazione (obbligatorio se SERVER MODE, formato mail)
+
+PGADMIN_SETUP_PASSWORD = password di autenticazione (obbligatorio se SERVER MODE)
