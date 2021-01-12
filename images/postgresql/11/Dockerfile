@@ -10,6 +10,7 @@ ENV PGDATA /var/lib/pgsql/11/data
 # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
 RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA"
 
+# Se la directory data è piena il comando initdb non va a buon fine
 RUN /usr/pgsql-11/bin/postgresql-11-setup initdb
 
 ENV PATH $PATH:/usr/pgsql-11/bin
