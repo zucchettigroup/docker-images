@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.4-apache
 
 # Required to build on linux non interactive system.
 ENV DEBIAN_FRONTEND=noninteractive
