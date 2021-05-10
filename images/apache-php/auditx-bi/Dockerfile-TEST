@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get install -y libicu-dev libzip-dev zip libpng-dev
 # Configure Extensions.
 RUN docker-php-ext-configure intl && docker-php-ext-install intl; \ 
 	docker-php-ext-configure pdo_mysql && docker-php-ext-install pdo_mysql; \
-	docker-php-ext-configure zip --with-libzip && docker-php-ext-install zip; \ 
+	docker-php-ext-configure zip && docker-php-ext-install zip; \ 
 	docker-php-ext-configure gd && docker-php-ext-install gd
 # Wkhtmltopdf
 RUN apt-get install -y wget; \ 
