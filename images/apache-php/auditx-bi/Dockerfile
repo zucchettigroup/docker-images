@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.0.8-apache
 
 # Required to build on linux non interactive system.
 ENV DEBIAN_FRONTEND=noninteractive
@@ -21,5 +21,5 @@ ENV COMPOSER_HOME=/tmp/composer
 RUN mkdir -p $COMPOSER_HOME
 COPY composer.json $COMPOSER_HOME
 COPY composer.lock $COMPOSER_HOME
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.16 && cd $COMPOSER_HOME && composer install --no-dev
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.1.3 && cd $COMPOSER_HOME && composer install --no-dev
 RUN ls -lhrt $COMPOSER_HOME
